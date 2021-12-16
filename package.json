@@ -1,0 +1,10 @@
+{
+  "name": "adapt-authoring-errorhandler",
+  "version": "0.0.1",
+  "description": "Error handling for the Adapt authoring tool",
+  "homepage": "https://github.com/taylortom/adapt-authoring-errorhandler",
+  "license": "GPL-3.0",
+  "type": "module",
+  "main": "index.js",
+  "repository": "github:taylortom/adapt-authoring-errorhandler"
+}
