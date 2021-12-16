@@ -1,1 +1,1 @@
-module.exports = require('./lib/TemplateModule');
+module.exports = require('./lib/ErrorHandlingModule');
