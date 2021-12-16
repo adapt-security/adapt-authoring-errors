@@ -1,1 +1,1 @@
-module.exports = require('./lib/ErrorHandlingModule');
+export { default } from './lib/ErrorHandlingModule.js';
