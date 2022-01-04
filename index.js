@@ -1,1 +1,1 @@
-export { default } from './lib/ErrorHandlingModule.js';
+export { default } from './lib/ErrorsModule.js';
