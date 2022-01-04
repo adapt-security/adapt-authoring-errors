@@ -1,0 +1,5 @@
+{
+  "ENOENT": 500,
+  "EEXIST": 500,
+  "MODULE_NOT_FOUND": 500
+}
