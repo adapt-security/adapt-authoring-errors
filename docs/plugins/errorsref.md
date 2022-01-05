@@ -1,5 +1,5 @@
 # Errors Reference
 
-This reference is a complete list of all system-defined errors.
+This page documents all errors which are likely to be thrown in the system.
 
 {{{ERRORS}}}
