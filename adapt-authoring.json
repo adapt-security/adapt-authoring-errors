@@ -1,3 +1,12 @@
 {
-  "isEssential": true
+  "isEssential": true,
+  "documentation": {
+    "enable": true,
+    "manualPages": {
+      "errorsref.md": "reference"
+    },
+    "manualPlugins": [
+      "docs/plugins/errors.js"
+    ]
+  } 
 }
