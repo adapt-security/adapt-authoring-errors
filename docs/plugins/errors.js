@@ -1,20 +1,26 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
 
-class Errors {
+export default class Errors {
   constructor(app, config, outputDir) {
     this.app = app;
     this.outputDir = outputDir;
   }
   async run() {
-    this.writeFile({});
+    const content = this.generateMd();
+    this.writeFile(content);
+  }
+  generateMd() {
+    return Object.keys(this.app.errors)
+      .sort()
+      .reduce((md, k) => {
+        const { code, description, statusCode } = this.app.errors[k];
+        return `${md}\n| ${code} | ${description} | ${statusCode} |`;
+      }, '| Error code | Description | HTTP status code |\n| - | - | :-: |');
   }
   async writeFile(content) {
-    const input = fs.readFileSync(path.join(__dirname, 'errorsref.md')).toString();
+    const input = fs.readFileSync(new URL('errorsref.md', import.meta.url)).toString();
     const outputPath = `${this.outputDir}/errorsref.md`;
     fs.writeFileSync(outputPath, input.replace('{{{ERRORS}}}', content));
     this.customFiles = [outputPath];
   }
 }
-
-module.exports = Errors;
