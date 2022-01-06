@@ -1,10 +1,18 @@
 {
+  "FUNC_NOT_OVERRIDDEN": {
+    "description": "Function must be overridden in child class",
+    "statusCode": 500
+  },
+  "INVALID_PARAMS": {
+    "description": "Invalid parameters have been provided",
+    "statusCode": 400
+  },
   "NOT_FOUND": {
-    "description": "Requested item could not be found",
-    "statusCode": 404,
     "data": {
       "id": "An identifier for the missing item",
       "type": "Type of the missing item"
-    }
+    },
+    "description": "Requested item could not be found",
+    "statusCode": 404
   }
 }
