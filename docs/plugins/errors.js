@@ -11,9 +11,15 @@ export default class Errors {
   }
   generateMd() {
     return Object.keys(this.app.errors).reduce((md, k) => {
-      const { code, description, statusCode } = this.app.errors[k];
-      return `${md}\n| ${code} | ${description} | ${statusCode} |`;
-    }, '| Error code | Description | HTTP status code |\n| - | - | :-: |');
+      const e = this.app.errors[k];
+      return `${md}\n| \`${e.code}\` | ${e.description} | ${e.statusCode} | <ul>${this.dataToMd(e.data)}</ul> |`;
+    }, '| Error code | Description | HTTP status code | Supplemental data |\n| - | - | :-: | - |');
+  }
+  dataToMd(data, s = '') {
+    if(!data) return s;
+    return Object.entries(data).reduce((s, [k, v]) => {
+      return `${s}<li>\`${k}\`: ${typeof v === 'object' ? this.dataToMd(v, s) : v}</li>`;
+    }, s);
   }
   async writeFile(content) {
     const input = fs.readFileSync(new URL('errorsref.md', import.meta.url)).toString();
