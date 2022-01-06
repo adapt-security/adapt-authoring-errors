@@ -2,9 +2,9 @@
   "name": "adapt-authoring-errors",
   "version": "0.0.1",
   "description": "Error handling for the Adapt authoring tool",
-  "homepage": "https://github.com/taylortom/adapt-authoring-errors",
+  "homepage": "https://github.com/adapt-security/adapt-authoring-errors",
   "license": "GPL-3.0",
   "type": "module",
   "main": "index.js",
-  "repository": "github:taylortom/adapt-authoring-errors"
+  "repository": "github:adapt-security/adapt-authoring-errors"
 }
