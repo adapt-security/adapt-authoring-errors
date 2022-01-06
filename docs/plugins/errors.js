@@ -10,12 +10,10 @@ export default class Errors {
     this.writeFile(content);
   }
   generateMd() {
-    return Object.keys(this.app.errors)
-      .sort()
-      .reduce((md, k) => {
-        const { code, description, statusCode } = this.app.errors[k];
-        return `${md}\n| ${code} | ${description} | ${statusCode} |`;
-      }, '| Error code | Description | HTTP status code |\n| - | - | :-: |');
+    return Object.keys(this.app.errors).reduce((md, k) => {
+      const { code, description, statusCode } = this.app.errors[k];
+      return `${md}\n| ${code} | ${description} | ${statusCode} |`;
+    }, '| Error code | Description | HTTP status code |\n| - | - | :-: |');
   }
   async writeFile(content) {
     const input = fs.readFileSync(new URL('errorsref.md', import.meta.url)).toString();
