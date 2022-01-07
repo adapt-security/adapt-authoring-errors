@@ -3,6 +3,10 @@
     "description": "Function must be overridden in child class",
     "statusCode": 500
   },
+  "SERVER_ERROR": {
+    "description": "Generic server error",
+    "statusCode": 500
+  },
   "INVALID_PARAMS": {
     "description": "Invalid parameters have been provided",
     "statusCode": 400
