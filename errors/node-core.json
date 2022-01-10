@@ -19,6 +19,10 @@
     "description": "No entity (file or directory) could be found by the given path",
     "statusCode": 500
   },
+  "ENOTEMPTY": {
+    "description": "A directory with entries was the target of an operation that requires an empty directory",
+    "statusCode": 500
+  },
   "MODULE_NOT_FOUND": {
     "description": "A module file could not be resolved while attempting a require() or import operation",
     "statusCode": 500
