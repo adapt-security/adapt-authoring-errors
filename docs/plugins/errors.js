@@ -12,7 +12,7 @@ export default class Errors {
   generateMd() {
     return Object.keys(this.app.errors).reduce((md, k) => {
       const e = this.app.errors[k];
-      return `${md}\n| \`${e.code}\` | ${e.description} | ${e.statusCode} | <ul>${this.dataToMd(e.data)}</ul> |`;
+      return `${md}\n| \`${e.code}\` | ${e.meta.description} | ${e.statusCode} | <ul>${this.dataToMd(e.meta.data)}</ul> |`;
     }, '| Error code | Description | HTTP status code | Supplemental data |\n| - | - | :-: | - |');
   }
   dataToMd(data, s = '') {
