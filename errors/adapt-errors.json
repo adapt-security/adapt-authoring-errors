@@ -5,7 +5,10 @@
   },
   "SERVER_ERROR": {
     "description": "Generic server error",
-    "statusCode": 500
+    "statusCode": 500, 
+    "data": {
+      "error": "The original error"
+    }
   },
   "INVALID_PARAMS": {
     "description": "Invalid parameters have been provided",
