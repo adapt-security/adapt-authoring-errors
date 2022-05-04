@@ -1,9 +1,9 @@
 import fs from 'fs';
 
 export default class Errors {
-  constructor(app, config, outputDir) {
+  constructor(app, config) {
     this.app = app;
-    this.outputDir = outputDir;
+    this.outputDir = config.outputDir;
   }
   async run() {
     const content = this.generateMd();
