@@ -3,6 +3,7 @@
   "documentation": {
     "enable": true,
     "manualPages": {
+      "error-handling.md": "basics",
       "errorsref.md": "reference"
     },
     "manualPlugins": [
