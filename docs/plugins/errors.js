@@ -1,13 +1,8 @@
-import fs from 'fs';
-
 export default class Errors {
-  constructor(app, config) {
-    this.app = app;
-    this.outputDir = config.outputDir;
-  }
   async run() {
-    const content = this.generateMd();
-    this.writeFile(content);
+    this.manualFile = 'errorsref.md';
+    this.contents = Object.keys(this.app.errors);
+    this.replace = { ERRORS: this.generateMd() };
   }
   generateMd() {
     return Object.keys(this.app.errors).reduce((md, k) => {
@@ -20,11 +15,5 @@ export default class Errors {
     return Object.entries(data).reduce((s, [k, v]) => {
       return `${s}<li>\`${k}\`: ${typeof v === 'object' ? this.dataToMd(v, s) : v}</li>`;
     }, s);
-  }
-  async writeFile(content) {
-    const input = fs.readFileSync(new URL('errorsref.md', import.meta.url)).toString();
-    const outputPath = `${this.outputDir}/errorsref.md`;
-    fs.writeFileSync(outputPath, input.replace('{{{ERRORS}}}', content));
-    this.customFiles = [outputPath];
   }
 }
