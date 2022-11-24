@@ -1,5 +1,5 @@
 {
-  "isEssential": true,
+  "essentialType": "errors",
   "documentation": {
     "enable": true,
     "manualPages": {
