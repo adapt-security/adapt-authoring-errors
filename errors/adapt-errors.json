@@ -3,6 +3,13 @@
     "description": "Function must be overridden in child class",
     "statusCode": 500
   },
+  "FUNC_DISABLED": {
+    "data": {
+      "name": "The name of the function"
+    },
+    "description": "Function has been disabled",
+    "statusCode": 500
+  },
   "SERVER_ERROR": {
     "description": "Generic server error",
     "statusCode": 500, 
