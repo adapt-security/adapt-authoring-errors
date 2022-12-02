@@ -1,5 +1,8 @@
 {
   "FUNC_NOT_OVERRIDDEN": {
+    "data": {
+      "name": "The name of the function"
+    },
     "description": "Function must be overridden in child class",
     "statusCode": 500
   },
