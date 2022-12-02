@@ -18,6 +18,9 @@
     }
   },
   "INVALID_PARAMS": {
+    "data": {
+      "params": "The invalid params"
+    },
     "description": "Invalid parameters have been provided",
     "statusCode": 400
   },
