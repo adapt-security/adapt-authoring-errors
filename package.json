@@ -13,5 +13,8 @@
   },
   "dependencies": {
     "glob": "^10.3.10"
+  },
+  "peerDependencies": {
+    "adapt-authoring-core": "github:adapt-security/adapt-authoring-core"
   }
 }
