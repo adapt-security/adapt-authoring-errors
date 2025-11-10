@@ -37,7 +37,7 @@
   },
   "SPAWN": {
     "data": {
-      "stderr": "The stderr output"
+      "error": "The error"
     },
     "description": "Spawned task failed",
     "statusCode": 500
