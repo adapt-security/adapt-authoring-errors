@@ -4,7 +4,7 @@ export default class Errors {
     this.contents = Object.keys(this.app.errors)
     this.replace = { ERRORS: this.generateMd() }
   }
-  
+
   generateMd () {
     return Object.keys(this.app.errors).reduce((md, k) => {
       const e = this.app.errors[k]
