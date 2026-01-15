@@ -34,12 +34,5 @@
     },
     "description": "Requested item could not be found",
     "statusCode": 404
-  },
-  "SPAWN": {
-    "data": {
-      "error": "The error"
-    },
-    "description": "Spawned task failed",
-    "statusCode": 500
   }
 }
