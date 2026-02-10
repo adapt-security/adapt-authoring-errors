@@ -1,0 +1,21 @@
+{
+  "TEST_ERROR": {
+    "description": "A test error",
+    "statusCode": 500
+  },
+  "TEST_NOT_FOUND": {
+    "description": "Test item not found",
+    "statusCode": 404,
+    "data": {
+      "id": "Item identifier"
+    }
+  },
+  "TEST_VALIDATION_ERROR": {
+    "description": "Test validation failed",
+    "statusCode": 400,
+    "data": {
+      "field": "The invalid field",
+      "value": "The invalid value"
+    }
+  }
+}

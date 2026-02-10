@@ -7,6 +7,9 @@
   "type": "module",
   "main": "index.js",
   "repository": "github:adapt-security/adapt-authoring-errors",
+  "scripts": {
+    "test": "node --test 'tests/**/*.spec.js'"
+  },
   "devDependencies": {
     "@semantic-release/git": "^10.0.1",
     "conventional-changelog-eslint": "^6.0.0",
