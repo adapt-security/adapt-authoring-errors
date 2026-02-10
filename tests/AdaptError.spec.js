@@ -78,6 +78,7 @@ describe('AdaptError', () => {
     it('should return formatted string without data', () => {
       const error = new AdaptError('TEST_ERROR')
       const result = error.toString()
+      // Note: trailing space after code is part of the current implementation
       assert.equal(result, 'AdaptError: TEST_ERROR ')
     })
 
