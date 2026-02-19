@@ -132,6 +132,47 @@ describe('AdaptError', () => {
     })
   })
 
+  describe('Error inheritance', () => {
+    it('should have a stack trace', () => {
+      const error = new AdaptError('TEST_ERROR')
+      assert.equal(typeof error.stack, 'string')
+      assert.ok(error.stack.length > 0)
+    })
+
+    it('should be catchable as a generic Error', () => {
+      let caught = false
+      try {
+        throw new AdaptError('THROWN_ERROR', 400)
+      } catch (e) {
+        caught = true
+        assert.ok(e instanceof Error)
+        assert.equal(e.code, 'THROWN_ERROR')
+        assert.equal(e.statusCode, 400)
+      }
+      assert.ok(caught)
+    })
+
+    it('should inherit name from Error', () => {
+      const error = new AdaptError('TEST_ERROR')
+      assert.equal(error.name, 'Error')
+    })
+  })
+
+  describe('setData and throw pattern', () => {
+    it('should support throw with chained setData', () => {
+      const data = { userId: '456' }
+      let caught
+      try {
+        throw new AdaptError('AUTH_ERROR', 401).setData(data)
+      } catch (e) {
+        caught = e
+      }
+      assert.ok(caught instanceof AdaptError)
+      assert.deepEqual(caught.data, data)
+      assert.equal(caught.code, 'AUTH_ERROR')
+    })
+  })
+
   describe('Edge cases', () => {
     it('should handle empty string as error code', () => {
       const error = new AdaptError('')
@@ -158,6 +199,23 @@ describe('AdaptError', () => {
     it('should handle setData with undefined', () => {
       const error = new AdaptError('TEST_ERROR')
       error.setData(undefined)
+      assert.equal(error.data, undefined)
+    })
+
+    it('should handle setData with a string value', () => {
+      const error = new AdaptError('TEST_ERROR')
+      error.setData('simple string')
+      assert.equal(error.data, 'simple string')
+    })
+
+    it('should handle toString with empty data object', () => {
+      const error = new AdaptError('TEST_ERROR')
+      error.setData({})
+      assert.equal(error.toString(), 'AdaptError: TEST_ERROR {}')
+    })
+
+    it('should not have data property before setData is called', () => {
+      const error = new AdaptError('TEST_ERROR')
       assert.equal(error.data, undefined)
     })
   })
