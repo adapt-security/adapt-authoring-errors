@@ -15,7 +15,6 @@
     "glob": "^13.0.0"
   },
   "peerDependencies": {},
-  "peerDependenciesMeta": {},
   "devDependencies": {
     "@semantic-release/git": "^10.0.1",
     "conventional-changelog-eslint": "^6.0.0",
